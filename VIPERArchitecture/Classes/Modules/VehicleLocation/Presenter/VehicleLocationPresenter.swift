@@ -10,32 +10,23 @@ import Foundation
 
 class VehicleLocationPresenter {
 
-    // MARK: Properties
     var view: VehicleLocationPresenterToViewProtocol?
     var interactor: VehicleLocationPresenterToInteractorProtocol?
     var router: VehicleLocationPresenterToRouterProtocol?
-    
     var vehicleList: [VehicleModel]?
-    
-    // MARK: Inputs from view
     
     func viewDidLoad(countryCoordinate: CountryCoordinate) {
         print("Presenter is being notified that the View was loaded.")
-        //view?.showHUD()
         
-        interactor?.loadVehicles(countryCoordinate: countryCoordinate)
+        getVehicles(countryCoordinate: countryCoordinate)
     }
     
 }
 
 extension VehicleLocationPresenter: VehicleLocationViewToPresenterProtocol {
 
-    func onMapDragged(countryCoordinate: CountryCoordinate) {
+    func getVehicles(countryCoordinate: CountryCoordinate) {
         interactor?.loadVehicles(countryCoordinate: countryCoordinate)
-    }
-    
-    func refresh() {
-        
     }
     
 }

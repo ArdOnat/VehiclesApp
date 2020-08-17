@@ -17,18 +17,29 @@ class VehicleListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: let tabbar = UITabBarController()
-        
-        
-        navigationItem.title = "Selam"
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: "TableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "cell")
-        
-        presenter?.viewDidLoad()
+        setupUI()
+        setupTableView()
+        setupDelegation()
+        configure()
     }
     
+    func setupUI() {
+        navigationItem.title = "Hamburg Vehicle List"
+        
+    }
+    
+    private func setupTableView() {
+        tableView.register(UINib(nibName: "TableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "cell")
+    }
+    
+    private func setupDelegation() {
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    private func configure() {
+        presenter?.viewDidLoad()
+    }
 }
 
 extension VehicleListViewController {
@@ -38,7 +49,7 @@ extension VehicleListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:TableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
+        let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
         
         if vehicleList[indexPath.row].state == DeviceState.INACTIVE.rawValue {
             cell.configureInactive(deviceInformation: vehicleList[indexPath.row])
@@ -46,6 +57,9 @@ extension VehicleListViewController {
         else {
             cell.configureActive(deviceInformation: vehicleList[indexPath.row])
         }
+        
+        cell.isUserInteractionEnabled = false
+        
         return cell
     }
     
@@ -72,12 +86,10 @@ extension VehicleListViewController: VehicleListPresenterToViewProtocol {
             
             self.tableView.reloadData()
         }
-        //self.refreshControl.endRefreshing()
     }
     
     func onFetchVehiclesFailure(error: String) {
         print("View receives the response from Presenter with error: \(error)")
-        //self.refreshControl.endRefreshing()
     }
     
     func showHUD() {

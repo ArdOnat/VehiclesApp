@@ -15,12 +15,12 @@ var interactor: VehicleLocationPresenterToInteractorProtocol? { get set }
 var router: VehicleLocationPresenterToRouterProtocol? { get set }
 var vehicleList: [VehicleModel]? { get set }
 func viewDidLoad(countryCoordinate: CountryCoordinate)
-func refresh()
-func onMapDragged(countryCoordinate: CountryCoordinate)
+func getVehicles(countryCoordinate: CountryCoordinate)
 }
 
 // MARK: View Output (Presenter -> View)
 protocol VehicleLocationPresenterToViewProtocol {
+func setupUI()
 func onFetchVehiclesSuccess()
 func onFetchVehiclesFailure(error: String)
 }

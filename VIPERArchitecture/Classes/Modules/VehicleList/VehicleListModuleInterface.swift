@@ -15,13 +15,13 @@ var interactor: VehicleListPresenterToInteractorProtocol? { get set }
 var router: VehicleListPresenterToRouterProtocol? { get set }
 var vehicleList: [VehicleModel]? { get set }
 func viewDidLoad()
-func refresh()
-func numberOfRowsInSection() -> Int
+func getVehicles(countryCoordinate: CountryCoordinate)
 }
 
 // MARK: View Output (Presenter -> View)
 protocol VehicleListPresenterToViewProtocol {
 var vehicleList: [VehicleModel] { get set }
+func setupUI()
 func onFetchVehiclesSuccess()
 func onFetchVehiclesFailure(error: String)
 }

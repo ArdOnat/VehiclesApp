@@ -11,54 +11,66 @@ import MapKit
 
 class VehicleLocationViewController: UIViewController {
     
-    var window:UIWindow?
-    var mapView: MKMapView?
-    
-    var presenter: VehicleLocationViewToPresenterProtocol?
-    var vehicleList = [VehicleModel]()
-    
+    let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+    var panGesture: UIPanGestureRecognizer?
     fileprivate let locationManager: CLLocationManager = {
         let manager = CLLocationManager()
         manager.requestWhenInUseAuthorization()
         return manager
     }()
     
+    var window:UIWindow?
+    var mapView = MKMapView()
+    var vSpinner : UIView?
+    
+    var presenter: VehicleLocationViewToPresenterProtocol?
+    var vehicleList = [VehicleModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupGestureRecognizer()
         setupUI()
         setupDelegation()
-        
-        if let mapView = mapView {
-            let countryCoordinate = CountryCoordinate(p2Lat: Float(mapView.northEastCoordinate.latitude), p1Lon:Float(mapView.southWestCoordinate.longitude), p1Lat: Float(mapView.southWestCoordinate.latitude), p2Lon: Float(mapView.northEastCoordinate.longitude))
-            presenter?.viewDidLoad(countryCoordinate: countryCoordinate)
-        }
+        configure()
     }
     
-    private func setupUI() {
-        
+    func setupUI() {
         navigationItem.title = "Map"
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.view.backgroundColor = UIColor.white
         
-        self.mapView = MKMapView(frame: CGRect(x: 0,y: 20, width: (self.window?.frame.width)!, height: (self.window?.frame.height)!))
-        self.view.addSubview(self.mapView!)
+        if let window = self.window {
+            self.mapView = MKMapView(frame: CGRect(x: 0,y: 20, width: (window.frame.width), height: (window.frame.height)))
+            self.view.addSubview(self.mapView)
+        }
         
+        mapView.addSubview(activityIndicator)
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
     }
     
     private func setupDelegation() {
+        mapView.delegate = self
         
-        mapView?.delegate = self
-        
-        // add pan gesture to detect when the map moves
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.didDragMap(_:)))
-
-        // make your class the delegate of the pan gesture
-        panGesture.delegate = self
-        
-        // add the gesture to the mapView
-        mapView?.addGestureRecognizer(panGesture)
+        if let panGesture = panGesture {
+            // make your class the delegate of the pan gesture
+            panGesture.delegate = self
+            
+            // add the gesture to the mapView
+            mapView.addGestureRecognizer(panGesture)
+        }
+    }
+    
+    private func setupGestureRecognizer() {
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(VehicleLocationViewController.didDragMap(_:)))
+    }
+    
+    private func configure() {
+        let countryCoordinate = CountryCoordinate(p2Lat: Float(mapView.northEastCoordinate.latitude), p1Lon:Float(mapView.southWestCoordinate.longitude), p1Lat: Float(mapView.southWestCoordinate.latitude), p2Lon: Float(mapView.northEastCoordinate.longitude))
+        activityIndicator.startAnimating()
+        presenter?.viewDidLoad(countryCoordinate: countryCoordinate)
     }
     
 }
@@ -79,15 +91,16 @@ extension VehicleLocationViewController: VehicleLocationPresenterToViewProtocol 
                 annotation.title = point.type.rawValue
                 annotation.subtitle = "\(point.id)"
                 annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(point.coordinate.latitude), longitude: CLLocationDegrees(point.coordinate.longitude))
-                self.mapView?.addAnnotation(annotation)
+                self.mapView.addAnnotation(annotation)
             }
+            
+            self.activityIndicator.stopAnimating()
         }
-        //self.refreshControl.endRefreshing()
     }
     
     func onFetchVehiclesFailure(error: String) {
         print("View receives the response from Presenter with error: \(error)")
-        //self.refreshControl.endRefreshing()
+        self.activityIndicator.stopAnimating()
     }
     
     func showHUD() {
@@ -122,18 +135,15 @@ extension VehicleLocationViewController: MKMapViewDelegate {
 
 extension VehicleLocationViewController: UIGestureRecognizerDelegate {
     
-    // MARK: - Gesture functions
-    
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
     
     @objc func didDragMap(_ sender: UIGestureRecognizer) {
         if sender.state == .ended {
-            if let mapView = mapView {
-                let countryCoordinate = CountryCoordinate(p2Lat: Float(mapView.northEastCoordinate.latitude), p1Lon:Float(mapView.southWestCoordinate.longitude), p1Lat: Float(mapView.southWestCoordinate.latitude), p2Lon: Float(mapView.northEastCoordinate.longitude))
-                presenter?.onMapDragged(countryCoordinate: countryCoordinate)
-            }
+            let countryCoordinate = CountryCoordinate(p2Lat: Float(mapView.northEastCoordinate.latitude), p1Lon:Float(mapView.southWestCoordinate.longitude), p1Lat: Float(mapView.southWestCoordinate.latitude), p2Lon: Float(mapView.northEastCoordinate.longitude))
+            activityIndicator.startAnimating()
+            presenter?.getVehicles(countryCoordinate: countryCoordinate)
         }
     }
     
@@ -145,7 +155,7 @@ extension VehicleLocationViewController: CLLocationManagerDelegate {
       let location = locations.last! as CLLocation
       let currentLocation = location.coordinate
       let coordinateRegion = MKCoordinateRegion(center: currentLocation, latitudinalMeters: 800, longitudinalMeters: 800)
-      mapView?.setRegion(coordinateRegion, animated: true)
+      mapView.setRegion(coordinateRegion, animated: true)
       locationManager.stopUpdatingLocation()
    }
     

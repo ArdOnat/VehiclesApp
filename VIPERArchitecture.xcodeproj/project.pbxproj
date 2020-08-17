@@ -38,6 +38,7 @@
 		4C33847F24EADD7F00389D2D /* VehicleLocationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33846224EADD7E00389D2D /* VehicleLocationInteractor.swift */; };
 		4C33848024EADD7F00389D2D /* VehicleLocationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33846424EADD7E00389D2D /* VehicleLocationRouter.swift */; };
 		4C33848124EADD7F00389D2D /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33846624EADD7E00389D2D /* VehicleService.swift */; };
+		4C69B33C24EB07A800B3C941 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C69B33B24EB07A800B3C941 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		4C33846224EADD7E00389D2D /* VehicleLocationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleLocationInteractor.swift; sourceTree = "<group>"; };
 		4C33846424EADD7E00389D2D /* VehicleLocationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleLocationRouter.swift; sourceTree = "<group>"; };
 		4C33846624EADD7E00389D2D /* VehicleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleService.swift; sourceTree = "<group>"; };
+		4C69B33B24EB07A800B3C941 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,8 +178,8 @@
 			children = (
 				4C33843524EADD7E00389D2D /* App */,
 				4C33843824EADD7E00389D2D /* Common */,
-				4C33844C24EADD7E00389D2D /* Modules */,
 				4C33846524EADD7E00389D2D /* Services */,
+				4C33844C24EADD7E00389D2D /* Modules */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -207,6 +209,7 @@
 			children = (
 				4C33843A24EADD7E00389D2D /* UIViewExtension.swift */,
 				4C33843B24EADD7E00389D2D /* MKMapViewExtension.swift */,
+				4C69B33B24EB07A800B3C941 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -278,8 +281,8 @@
 		4C33844D24EADD7E00389D2D /* VehicleList */ = {
 			isa = PBXGroup;
 			children = (
-				4C33844E24EADD7E00389D2D /* ModuleBuilder */,
 				4C33845024EADD7E00389D2D /* VehicleListModuleInterface.swift */,
+				4C33844E24EADD7E00389D2D /* ModuleBuilder */,
 				4C33845124EADD7E00389D2D /* Presenter */,
 				4C33845324EADD7E00389D2D /* ViewController */,
 				4C33845524EADD7E00389D2D /* Interactor */,
@@ -331,9 +334,9 @@
 		4C33845924EADD7E00389D2D /* VehicleLocation */ = {
 			isa = PBXGroup;
 			children = (
+				4C33845E24EADD7E00389D2D /* VehicleLocationModuleInterface.swift */,
 				4C33845A24EADD7E00389D2D /* ModuleBuilder */,
 				4C33845C24EADD7E00389D2D /* Presenter */,
-				4C33845E24EADD7E00389D2D /* VehicleLocationModuleInterface.swift */,
 				4C33845F24EADD7E00389D2D /* ViewController */,
 				4C33846124EADD7E00389D2D /* Interactor */,
 				4C33846324EADD7E00389D2D /* Router */,
@@ -559,6 +562,7 @@
 				4C33847F24EADD7F00389D2D /* VehicleLocationInteractor.swift in Sources */,
 				4C33848124EADD7F00389D2D /* VehicleService.swift in Sources */,
 				4C33847024EADD7F00389D2D /* VehicleState.swift in Sources */,
+				4C69B33C24EB07A800B3C941 /* UIViewControllerExtension.swift in Sources */,
 				4C33847524EADD7F00389D2D /* VehicleListModuleBuilder.swift in Sources */,
 				4C33847E24EADD7F00389D2D /* VehicleLocationViewController.swift in Sources */,
 				4C33846824EADD7F00389D2D /* SceneDelegate.swift in Sources */,
