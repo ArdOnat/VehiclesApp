@@ -7,14 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C33840524EADCE800389D2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33840424EADCE800389D2D /* AppDelegate.swift */; };
-		4C33840724EADCE800389D2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33840624EADCE800389D2D /* SceneDelegate.swift */; };
-		4C33840924EADCE800389D2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33840824EADCE800389D2D /* ViewController.swift */; };
-		4C33840C24EADCE800389D2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C33840A24EADCE800389D2D /* Main.storyboard */; };
 		4C33840E24EADCE800389D2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C33840D24EADCE800389D2D /* Assets.xcassets */; };
 		4C33841124EADCE800389D2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C33840F24EADCE800389D2D /* LaunchScreen.storyboard */; };
 		4C33841C24EADCE800389D2D /* VIPERArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33841B24EADCE800389D2D /* VIPERArchitectureTests.swift */; };
 		4C33842724EADCE800389D2D /* VIPERArchitectureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33842624EADCE800389D2D /* VIPERArchitectureUITests.swift */; };
+		4C33846724EADD7E00389D2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33843624EADD7E00389D2D /* AppDelegate.swift */; };
+		4C33846824EADD7F00389D2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33843724EADD7E00389D2D /* SceneDelegate.swift */; };
+		4C33846924EADD7F00389D2D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33843A24EADD7E00389D2D /* UIViewExtension.swift */; };
+		4C33846A24EADD7F00389D2D /* MKMapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33843B24EADD7E00389D2D /* MKMapViewExtension.swift */; };
+		4C33846B24EADD7F00389D2D /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C33843E24EADD7E00389D2D /* TableViewController.xib */; };
+		4C33846C24EADD7F00389D2D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844024EADD7E00389D2D /* TableViewCell.swift */; };
+		4C33846D24EADD7F00389D2D /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C33844124EADD7E00389D2D /* TableViewCell.xib */; };
+		4C33846E24EADD7F00389D2D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844324EADD7E00389D2D /* TabBarController.swift */; };
+		4C33846F24EADD7F00389D2D /* APIVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844524EADD7E00389D2D /* APIVehicle.swift */; };
+		4C33847024EADD7F00389D2D /* VehicleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844724EADD7E00389D2D /* VehicleState.swift */; };
+		4C33847124EADD7F00389D2D /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844824EADD7E00389D2D /* VehicleType.swift */; };
+		4C33847224EADD7F00389D2D /* CountryCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844924EADD7E00389D2D /* CountryCoordinate.swift */; };
+		4C33847324EADD7F00389D2D /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844A24EADD7E00389D2D /* VehicleModel.swift */; };
+		4C33847424EADD7F00389D2D /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844B24EADD7E00389D2D /* ErrorResponse.swift */; };
+		4C33847524EADD7F00389D2D /* VehicleListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844F24EADD7E00389D2D /* VehicleListModuleBuilder.swift */; };
+		4C33847624EADD7F00389D2D /* VehicleListModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33845024EADD7E00389D2D /* VehicleListModuleInterface.swift */; };
+		4C33847724EADD7F00389D2D /* VehicleListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33845224EADD7E00389D2D /* VehicleListPresenter.swift */; };
+		4C33847824EADD7F00389D2D /* VehicleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33845424EADD7E00389D2D /* VehicleListViewController.swift */; };
+		4C33847924EADD7F00389D2D /* VehicleListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33845624EADD7E00389D2D /* VehicleListInteractor.swift */; };
+		4C33847A24EADD7F00389D2D /* VehicleListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33845824EADD7E00389D2D /* VehicleListRouter.swift */; };
+		4C33847B24EADD7F00389D2D /* VehicleLocationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33845B24EADD7E00389D2D /* VehicleLocationModuleBuilder.swift */; };
+		4C33847C24EADD7F00389D2D /* VehicleLocationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33845D24EADD7E00389D2D /* VehicleLocationPresenter.swift */; };
+		4C33847D24EADD7F00389D2D /* VehicleLocationModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33845E24EADD7E00389D2D /* VehicleLocationModuleInterface.swift */; };
+		4C33847E24EADD7F00389D2D /* VehicleLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33846024EADD7E00389D2D /* VehicleLocationViewController.swift */; };
+		4C33847F24EADD7F00389D2D /* VehicleLocationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33846224EADD7E00389D2D /* VehicleLocationInteractor.swift */; };
+		4C33848024EADD7F00389D2D /* VehicleLocationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33846424EADD7E00389D2D /* VehicleLocationRouter.swift */; };
+		4C33848124EADD7F00389D2D /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33846624EADD7E00389D2D /* VehicleService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +59,6 @@
 
 /* Begin PBXFileReference section */
 		4C33840124EADCE800389D2D /* VIPERArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPERArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C33840424EADCE800389D2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C33840624EADCE800389D2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C33840824EADCE800389D2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4C33840B24EADCE800389D2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C33840D24EADCE800389D2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C33841024EADCE800389D2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C33841224EADCE800389D2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +68,33 @@
 		4C33842224EADCE800389D2D /* VIPERArchitectureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPERArchitectureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C33842624EADCE800389D2D /* VIPERArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERArchitectureUITests.swift; sourceTree = "<group>"; };
 		4C33842824EADCE800389D2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C33843624EADD7E00389D2D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4C33843724EADD7E00389D2D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4C33843A24EADD7E00389D2D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		4C33843B24EADD7E00389D2D /* MKMapViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapViewExtension.swift; sourceTree = "<group>"; };
+		4C33843E24EADD7E00389D2D /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		4C33844024EADD7E00389D2D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		4C33844124EADD7E00389D2D /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		4C33844324EADD7E00389D2D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4C33844524EADD7E00389D2D /* APIVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIVehicle.swift; sourceTree = "<group>"; };
+		4C33844724EADD7E00389D2D /* VehicleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleState.swift; sourceTree = "<group>"; };
+		4C33844824EADD7E00389D2D /* VehicleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleType.swift; sourceTree = "<group>"; };
+		4C33844924EADD7E00389D2D /* CountryCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCoordinate.swift; sourceTree = "<group>"; };
+		4C33844A24EADD7E00389D2D /* VehicleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
+		4C33844B24EADD7E00389D2D /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		4C33844F24EADD7E00389D2D /* VehicleListModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleListModuleBuilder.swift; sourceTree = "<group>"; };
+		4C33845024EADD7E00389D2D /* VehicleListModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleListModuleInterface.swift; sourceTree = "<group>"; };
+		4C33845224EADD7E00389D2D /* VehicleListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleListPresenter.swift; sourceTree = "<group>"; };
+		4C33845424EADD7E00389D2D /* VehicleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleListViewController.swift; sourceTree = "<group>"; };
+		4C33845624EADD7E00389D2D /* VehicleListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleListInteractor.swift; sourceTree = "<group>"; };
+		4C33845824EADD7E00389D2D /* VehicleListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleListRouter.swift; sourceTree = "<group>"; };
+		4C33845B24EADD7E00389D2D /* VehicleLocationModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleLocationModuleBuilder.swift; sourceTree = "<group>"; };
+		4C33845D24EADD7E00389D2D /* VehicleLocationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleLocationPresenter.swift; sourceTree = "<group>"; };
+		4C33845E24EADD7E00389D2D /* VehicleLocationModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleLocationModuleInterface.swift; sourceTree = "<group>"; };
+		4C33846024EADD7E00389D2D /* VehicleLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleLocationViewController.swift; sourceTree = "<group>"; };
+		4C33846224EADD7E00389D2D /* VehicleLocationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleLocationInteractor.swift; sourceTree = "<group>"; };
+		4C33846424EADD7E00389D2D /* VehicleLocationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleLocationRouter.swift; sourceTree = "<group>"; };
+		4C33846624EADD7E00389D2D /* VehicleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +145,10 @@
 		4C33840324EADCE800389D2D /* VIPERArchitecture */ = {
 			isa = PBXGroup;
 			children = (
-				4C33840424EADCE800389D2D /* AppDelegate.swift */,
-				4C33840624EADCE800389D2D /* SceneDelegate.swift */,
-				4C33840824EADCE800389D2D /* ViewController.swift */,
-				4C33840A24EADCE800389D2D /* Main.storyboard */,
-				4C33840D24EADCE800389D2D /* Assets.xcassets */,
-				4C33840F24EADCE800389D2D /* LaunchScreen.storyboard */,
 				4C33841224EADCE800389D2D /* Info.plist */,
+				4C33843424EADD7E00389D2D /* Classes */,
+				4C33848224EADD9600389D2D /* Resources */,
+				4C33848324EADD9D00389D2D /* Supporting Files */,
 			);
 			path = VIPERArchitecture;
 			sourceTree = "<group>";
@@ -126,6 +169,240 @@
 				4C33842824EADCE800389D2D /* Info.plist */,
 			);
 			path = VIPERArchitectureUITests;
+			sourceTree = "<group>";
+		};
+		4C33843424EADD7E00389D2D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4C33843524EADD7E00389D2D /* App */,
+				4C33843824EADD7E00389D2D /* Common */,
+				4C33844C24EADD7E00389D2D /* Modules */,
+				4C33846524EADD7E00389D2D /* Services */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4C33843524EADD7E00389D2D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4C33843624EADD7E00389D2D /* AppDelegate.swift */,
+				4C33843724EADD7E00389D2D /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4C33843824EADD7E00389D2D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4C33843924EADD7E00389D2D /* Extension */,
+				4C33843C24EADD7E00389D2D /* UI Components */,
+				4C33844424EADD7E00389D2D /* Entitites */,
+				4C33844624EADD7E00389D2D /* Enums and Structs */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4C33843924EADD7E00389D2D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4C33843A24EADD7E00389D2D /* UIViewExtension.swift */,
+				4C33843B24EADD7E00389D2D /* MKMapViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4C33843C24EADD7E00389D2D /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				4C33843D24EADD7E00389D2D /* Table View */,
+				4C33843F24EADD7E00389D2D /* Table View Cell */,
+				4C33844224EADD7E00389D2D /* Tab Bar */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		4C33843D24EADD7E00389D2D /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+				4C33843E24EADD7E00389D2D /* TableViewController.xib */,
+			);
+			path = "Table View";
+			sourceTree = "<group>";
+		};
+		4C33843F24EADD7E00389D2D /* Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4C33844024EADD7E00389D2D /* TableViewCell.swift */,
+				4C33844124EADD7E00389D2D /* TableViewCell.xib */,
+			);
+			path = "Table View Cell";
+			sourceTree = "<group>";
+		};
+		4C33844224EADD7E00389D2D /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				4C33844324EADD7E00389D2D /* TabBarController.swift */,
+			);
+			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		4C33844424EADD7E00389D2D /* Entitites */ = {
+			isa = PBXGroup;
+			children = (
+				4C33844524EADD7E00389D2D /* APIVehicle.swift */,
+			);
+			path = Entitites;
+			sourceTree = "<group>";
+		};
+		4C33844624EADD7E00389D2D /* Enums and Structs */ = {
+			isa = PBXGroup;
+			children = (
+				4C33844724EADD7E00389D2D /* VehicleState.swift */,
+				4C33844824EADD7E00389D2D /* VehicleType.swift */,
+				4C33844924EADD7E00389D2D /* CountryCoordinate.swift */,
+				4C33844A24EADD7E00389D2D /* VehicleModel.swift */,
+				4C33844B24EADD7E00389D2D /* ErrorResponse.swift */,
+			);
+			path = "Enums and Structs";
+			sourceTree = "<group>";
+		};
+		4C33844C24EADD7E00389D2D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4C33844D24EADD7E00389D2D /* VehicleList */,
+				4C33845924EADD7E00389D2D /* VehicleLocation */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4C33844D24EADD7E00389D2D /* VehicleList */ = {
+			isa = PBXGroup;
+			children = (
+				4C33844E24EADD7E00389D2D /* ModuleBuilder */,
+				4C33845024EADD7E00389D2D /* VehicleListModuleInterface.swift */,
+				4C33845124EADD7E00389D2D /* Presenter */,
+				4C33845324EADD7E00389D2D /* ViewController */,
+				4C33845524EADD7E00389D2D /* Interactor */,
+				4C33845724EADD7E00389D2D /* Router */,
+			);
+			path = VehicleList;
+			sourceTree = "<group>";
+		};
+		4C33844E24EADD7E00389D2D /* ModuleBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				4C33844F24EADD7E00389D2D /* VehicleListModuleBuilder.swift */,
+			);
+			path = ModuleBuilder;
+			sourceTree = "<group>";
+		};
+		4C33845124EADD7E00389D2D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4C33845224EADD7E00389D2D /* VehicleListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4C33845324EADD7E00389D2D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C33845424EADD7E00389D2D /* VehicleListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4C33845524EADD7E00389D2D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4C33845624EADD7E00389D2D /* VehicleListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4C33845724EADD7E00389D2D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4C33845824EADD7E00389D2D /* VehicleListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4C33845924EADD7E00389D2D /* VehicleLocation */ = {
+			isa = PBXGroup;
+			children = (
+				4C33845A24EADD7E00389D2D /* ModuleBuilder */,
+				4C33845C24EADD7E00389D2D /* Presenter */,
+				4C33845E24EADD7E00389D2D /* VehicleLocationModuleInterface.swift */,
+				4C33845F24EADD7E00389D2D /* ViewController */,
+				4C33846124EADD7E00389D2D /* Interactor */,
+				4C33846324EADD7E00389D2D /* Router */,
+			);
+			path = VehicleLocation;
+			sourceTree = "<group>";
+		};
+		4C33845A24EADD7E00389D2D /* ModuleBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				4C33845B24EADD7E00389D2D /* VehicleLocationModuleBuilder.swift */,
+			);
+			path = ModuleBuilder;
+			sourceTree = "<group>";
+		};
+		4C33845C24EADD7E00389D2D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4C33845D24EADD7E00389D2D /* VehicleLocationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4C33845F24EADD7E00389D2D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C33846024EADD7E00389D2D /* VehicleLocationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4C33846124EADD7E00389D2D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4C33846224EADD7E00389D2D /* VehicleLocationInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4C33846324EADD7E00389D2D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4C33846424EADD7E00389D2D /* VehicleLocationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4C33846524EADD7E00389D2D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4C33846624EADD7E00389D2D /* VehicleService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4C33848224EADD9600389D2D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C33840D24EADCE800389D2D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4C33848324EADD9D00389D2D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C33840F24EADCE800389D2D /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +510,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C33841124EADCE800389D2D /* LaunchScreen.storyboard in Resources */,
+				4C33846D24EADD7F00389D2D /* TableViewCell.xib in Resources */,
 				4C33840E24EADCE800389D2D /* Assets.xcassets in Resources */,
-				4C33840C24EADCE800389D2D /* Main.storyboard in Resources */,
+				4C33846B24EADD7F00389D2D /* TableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +537,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C33840924EADCE800389D2D /* ViewController.swift in Sources */,
-				4C33840524EADCE800389D2D /* AppDelegate.swift in Sources */,
-				4C33840724EADCE800389D2D /* SceneDelegate.swift in Sources */,
+				4C33847724EADD7F00389D2D /* VehicleListPresenter.swift in Sources */,
+				4C33846C24EADD7F00389D2D /* TableViewCell.swift in Sources */,
+				4C33847B24EADD7F00389D2D /* VehicleLocationModuleBuilder.swift in Sources */,
+				4C33846F24EADD7F00389D2D /* APIVehicle.swift in Sources */,
+				4C33847A24EADD7F00389D2D /* VehicleListRouter.swift in Sources */,
+				4C33847624EADD7F00389D2D /* VehicleListModuleInterface.swift in Sources */,
+				4C33847224EADD7F00389D2D /* CountryCoordinate.swift in Sources */,
+				4C33847824EADD7F00389D2D /* VehicleListViewController.swift in Sources */,
+				4C33847424EADD7F00389D2D /* ErrorResponse.swift in Sources */,
+				4C33847124EADD7F00389D2D /* VehicleType.swift in Sources */,
+				4C33847D24EADD7F00389D2D /* VehicleLocationModuleInterface.swift in Sources */,
+				4C33847C24EADD7F00389D2D /* VehicleLocationPresenter.swift in Sources */,
+				4C33846924EADD7F00389D2D /* UIViewExtension.swift in Sources */,
+				4C33847324EADD7F00389D2D /* VehicleModel.swift in Sources */,
+				4C33847924EADD7F00389D2D /* VehicleListInteractor.swift in Sources */,
+				4C33846A24EADD7F00389D2D /* MKMapViewExtension.swift in Sources */,
+				4C33848024EADD7F00389D2D /* VehicleLocationRouter.swift in Sources */,
+				4C33846E24EADD7F00389D2D /* TabBarController.swift in Sources */,
+				4C33846724EADD7E00389D2D /* AppDelegate.swift in Sources */,
+				4C33847F24EADD7F00389D2D /* VehicleLocationInteractor.swift in Sources */,
+				4C33848124EADD7F00389D2D /* VehicleService.swift in Sources */,
+				4C33847024EADD7F00389D2D /* VehicleState.swift in Sources */,
+				4C33847524EADD7F00389D2D /* VehicleListModuleBuilder.swift in Sources */,
+				4C33847E24EADD7F00389D2D /* VehicleLocationViewController.swift in Sources */,
+				4C33846824EADD7F00389D2D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +597,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4C33840A24EADCE800389D2D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C33840B24EADCE800389D2D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4C33840F24EADCE800389D2D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

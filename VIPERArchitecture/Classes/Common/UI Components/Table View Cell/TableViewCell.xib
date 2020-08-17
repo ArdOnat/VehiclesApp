@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xE8-iX-3my" customClass="TableViewCell" customModule="CaseProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xE8-iX-3my" id="kDx-sx-dtg">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S0U-j8-nDD">
+                        <rect key="frame" x="4" y="4" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="S0U-j8-nDD" secondAttribute="height" multiplier="1:1" id="8l9-oR-s0Q"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJW-5e-Xgs">
+                        <rect key="frame" x="186" y="11.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zub-1I-byo">
+                        <rect key="frame" x="374" y="4" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Zub-1I-byo" secondAttribute="height" id="5zh-Od-V7X"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bJW-5e-Xgs" firstAttribute="centerY" secondItem="kDx-sx-dtg" secondAttribute="centerY" id="Ilu-2k-GfI"/>
+                    <constraint firstAttribute="trailing" secondItem="Zub-1I-byo" secondAttribute="trailing" constant="4" id="J76-e5-V4k"/>
+                    <constraint firstItem="S0U-j8-nDD" firstAttribute="top" secondItem="kDx-sx-dtg" secondAttribute="top" constant="4" id="TAt-UR-Pjb"/>
+                    <constraint firstItem="S0U-j8-nDD" firstAttribute="leading" secondItem="kDx-sx-dtg" secondAttribute="leading" constant="4" id="a2H-Tb-2q3"/>
+                    <constraint firstItem="Zub-1I-byo" firstAttribute="top" secondItem="kDx-sx-dtg" secondAttribute="top" constant="4" id="joN-BG-Mzr"/>
+                    <constraint firstItem="bJW-5e-Xgs" firstAttribute="centerX" secondItem="kDx-sx-dtg" secondAttribute="centerX" id="vLi-HB-bZh"/>
+                    <constraint firstAttribute="bottom" secondItem="S0U-j8-nDD" secondAttribute="bottom" constant="4" id="vof-sI-NHO"/>
+                    <constraint firstAttribute="bottom" secondItem="Zub-1I-byo" secondAttribute="bottom" constant="4" id="zaN-Nv-MTi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="vehicleIdLabel" destination="bJW-5e-Xgs" id="St9-BE-dKt"/>
+                <outlet property="vehicleStateImageView" destination="Zub-1I-byo" id="M3R-0j-V2y"/>
+                <outlet property="vehicleTypeImageView" destination="S0U-j8-nDD" id="6wR-Bg-4Qe"/>
+            </connections>
+            <point key="canvasLocation" x="136" y="165"/>
+        </tableViewCell>
+    </objects>
+</document>
