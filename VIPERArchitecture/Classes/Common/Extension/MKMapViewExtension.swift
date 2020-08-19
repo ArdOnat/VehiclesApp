@@ -6,7 +6,6 @@
 //  Copyright © 2020 Arda Onat. All rights reserved.
 //
 
-import Foundation
 import MapKit
 
 extension MKMapView {

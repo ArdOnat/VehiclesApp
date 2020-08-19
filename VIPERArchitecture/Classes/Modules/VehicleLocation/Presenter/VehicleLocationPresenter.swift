@@ -16,8 +16,6 @@ class VehicleLocationPresenter {
     var vehicleList: [VehicleModel]?
     
     func viewDidLoad(countryCoordinate: CountryCoordinate) {
-        print("Presenter is being notified that the View was loaded.")
-        
         getVehicles(countryCoordinate: countryCoordinate)
     }
     

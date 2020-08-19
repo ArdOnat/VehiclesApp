@@ -15,10 +15,8 @@
 		4C33846824EADD7F00389D2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33843724EADD7E00389D2D /* SceneDelegate.swift */; };
 		4C33846924EADD7F00389D2D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33843A24EADD7E00389D2D /* UIViewExtension.swift */; };
 		4C33846A24EADD7F00389D2D /* MKMapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33843B24EADD7E00389D2D /* MKMapViewExtension.swift */; };
-		4C33846B24EADD7F00389D2D /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C33843E24EADD7E00389D2D /* TableViewController.xib */; };
 		4C33846C24EADD7F00389D2D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844024EADD7E00389D2D /* TableViewCell.swift */; };
 		4C33846D24EADD7F00389D2D /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C33844124EADD7E00389D2D /* TableViewCell.xib */; };
-		4C33846E24EADD7F00389D2D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844324EADD7E00389D2D /* TabBarController.swift */; };
 		4C33846F24EADD7F00389D2D /* APIVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844524EADD7E00389D2D /* APIVehicle.swift */; };
 		4C33847024EADD7F00389D2D /* VehicleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844724EADD7E00389D2D /* VehicleState.swift */; };
 		4C33847124EADD7F00389D2D /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33844824EADD7E00389D2D /* VehicleType.swift */; };
@@ -38,7 +36,8 @@
 		4C33847F24EADD7F00389D2D /* VehicleLocationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33846224EADD7E00389D2D /* VehicleLocationInteractor.swift */; };
 		4C33848024EADD7F00389D2D /* VehicleLocationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33846424EADD7E00389D2D /* VehicleLocationRouter.swift */; };
 		4C33848124EADD7F00389D2D /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33846624EADD7E00389D2D /* VehicleService.swift */; };
-		4C69B33C24EB07A800B3C941 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C69B33B24EB07A800B3C941 /* UIViewControllerExtension.swift */; };
+		4C79432224EDA60400E37804 /* ConstantString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79432124EDA60400E37804 /* ConstantString.swift */; };
+		4C79432424EDA89400E37804 /* ConstantCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79432324EDA89400E37804 /* ConstantCoordinates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,10 +72,8 @@
 		4C33843724EADD7E00389D2D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4C33843A24EADD7E00389D2D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		4C33843B24EADD7E00389D2D /* MKMapViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapViewExtension.swift; sourceTree = "<group>"; };
-		4C33843E24EADD7E00389D2D /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		4C33844024EADD7E00389D2D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		4C33844124EADD7E00389D2D /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		4C33844324EADD7E00389D2D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4C33844524EADD7E00389D2D /* APIVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIVehicle.swift; sourceTree = "<group>"; };
 		4C33844724EADD7E00389D2D /* VehicleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleState.swift; sourceTree = "<group>"; };
 		4C33844824EADD7E00389D2D /* VehicleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleType.swift; sourceTree = "<group>"; };
@@ -96,7 +93,8 @@
 		4C33846224EADD7E00389D2D /* VehicleLocationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleLocationInteractor.swift; sourceTree = "<group>"; };
 		4C33846424EADD7E00389D2D /* VehicleLocationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleLocationRouter.swift; sourceTree = "<group>"; };
 		4C33846624EADD7E00389D2D /* VehicleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleService.swift; sourceTree = "<group>"; };
-		4C69B33B24EB07A800B3C941 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		4C79432124EDA60400E37804 /* ConstantString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantString.swift; sourceTree = "<group>"; };
+		4C79432324EDA89400E37804 /* ConstantCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantCoordinates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +207,6 @@
 			children = (
 				4C33843A24EADD7E00389D2D /* UIViewExtension.swift */,
 				4C33843B24EADD7E00389D2D /* MKMapViewExtension.swift */,
-				4C69B33B24EB07A800B3C941 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -217,19 +214,9 @@
 		4C33843C24EADD7E00389D2D /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
-				4C33843D24EADD7E00389D2D /* Table View */,
 				4C33843F24EADD7E00389D2D /* Table View Cell */,
-				4C33844224EADD7E00389D2D /* Tab Bar */,
 			);
 			path = "UI Components";
-			sourceTree = "<group>";
-		};
-		4C33843D24EADD7E00389D2D /* Table View */ = {
-			isa = PBXGroup;
-			children = (
-				4C33843E24EADD7E00389D2D /* TableViewController.xib */,
-			);
-			path = "Table View";
 			sourceTree = "<group>";
 		};
 		4C33843F24EADD7E00389D2D /* Table View Cell */ = {
@@ -239,14 +226,6 @@
 				4C33844124EADD7E00389D2D /* TableViewCell.xib */,
 			);
 			path = "Table View Cell";
-			sourceTree = "<group>";
-		};
-		4C33844224EADD7E00389D2D /* Tab Bar */ = {
-			isa = PBXGroup;
-			children = (
-				4C33844324EADD7E00389D2D /* TabBarController.swift */,
-			);
-			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
 		4C33844424EADD7E00389D2D /* Entitites */ = {
@@ -265,6 +244,8 @@
 				4C33844924EADD7E00389D2D /* CountryCoordinate.swift */,
 				4C33844A24EADD7E00389D2D /* VehicleModel.swift */,
 				4C33844B24EADD7E00389D2D /* ErrorResponse.swift */,
+				4C79432124EDA60400E37804 /* ConstantString.swift */,
+				4C79432324EDA89400E37804 /* ConstantCoordinates.swift */,
 			);
 			path = "Enums and Structs";
 			sourceTree = "<group>";
@@ -515,7 +496,6 @@
 				4C33841124EADCE800389D2D /* LaunchScreen.storyboard in Resources */,
 				4C33846D24EADD7F00389D2D /* TableViewCell.xib in Resources */,
 				4C33840E24EADCE800389D2D /* Assets.xcassets in Resources */,
-				4C33846B24EADD7F00389D2D /* TableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +527,7 @@
 				4C33847A24EADD7F00389D2D /* VehicleListRouter.swift in Sources */,
 				4C33847624EADD7F00389D2D /* VehicleListModuleInterface.swift in Sources */,
 				4C33847224EADD7F00389D2D /* CountryCoordinate.swift in Sources */,
+				4C79432424EDA89400E37804 /* ConstantCoordinates.swift in Sources */,
 				4C33847824EADD7F00389D2D /* VehicleListViewController.swift in Sources */,
 				4C33847424EADD7F00389D2D /* ErrorResponse.swift in Sources */,
 				4C33847124EADD7F00389D2D /* VehicleType.swift in Sources */,
@@ -557,12 +538,11 @@
 				4C33847924EADD7F00389D2D /* VehicleListInteractor.swift in Sources */,
 				4C33846A24EADD7F00389D2D /* MKMapViewExtension.swift in Sources */,
 				4C33848024EADD7F00389D2D /* VehicleLocationRouter.swift in Sources */,
-				4C33846E24EADD7F00389D2D /* TabBarController.swift in Sources */,
 				4C33846724EADD7E00389D2D /* AppDelegate.swift in Sources */,
 				4C33847F24EADD7F00389D2D /* VehicleLocationInteractor.swift in Sources */,
+				4C79432224EDA60400E37804 /* ConstantString.swift in Sources */,
 				4C33848124EADD7F00389D2D /* VehicleService.swift in Sources */,
 				4C33847024EADD7F00389D2D /* VehicleState.swift in Sources */,
-				4C69B33C24EB07A800B3C941 /* UIViewControllerExtension.swift in Sources */,
 				4C33847524EADD7F00389D2D /* VehicleListModuleBuilder.swift in Sources */,
 				4C33847E24EADD7F00389D2D /* VehicleLocationViewController.swift in Sources */,
 				4C33846824EADD7F00389D2D /* SceneDelegate.swift in Sources */,

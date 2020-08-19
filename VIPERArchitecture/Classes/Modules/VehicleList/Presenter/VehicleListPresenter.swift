@@ -13,9 +13,8 @@ class VehicleListPresenter {
     var router: VehicleListPresenterToRouterProtocol?
     var vehicleList: [VehicleModel]?
     
-    // MARK: Inputs from view
     func viewDidLoad() {
-        let countryCoordinate = CountryCoordinate(p2Lat: 53.694865, p1Lon:9.757589, p1Lat: 53.394655, p2Lon: 10.099891) // Hamburg
+        let countryCoordinate = ConstantCoordinates.Hamburg
         getVehicles(countryCoordinate: countryCoordinate)
     }
     
@@ -39,4 +38,5 @@ extension VehicleListPresenter: VehicleListInteractorToPresenterProtocol {
     func fetchVehiclesFailure(error: Error) {
     
     }
+    
 }

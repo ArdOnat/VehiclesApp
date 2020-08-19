@@ -10,10 +10,7 @@ import UIKit
 
 class VehicleListModuleBuilder {
     
-    // MARK: Static methods
     static func createModule() -> UINavigationController {
-        
-        print("VehicleListRouter creates the Vehicle List module.")
         let viewController = VehicleListViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
         

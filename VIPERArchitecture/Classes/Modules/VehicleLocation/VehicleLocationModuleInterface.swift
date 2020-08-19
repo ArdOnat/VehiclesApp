@@ -7,34 +7,37 @@
 //
 
 import UIKit
+import MapKit
 
 // MARK: View Input (View -> Presenter)
 protocol VehicleLocationViewToPresenterProtocol {
-var view: VehicleLocationPresenterToViewProtocol? { get set }
-var interactor: VehicleLocationPresenterToInteractorProtocol? { get set }
-var router: VehicleLocationPresenterToRouterProtocol? { get set }
-var vehicleList: [VehicleModel]? { get set }
-func viewDidLoad(countryCoordinate: CountryCoordinate)
-func getVehicles(countryCoordinate: CountryCoordinate)
+    var view: VehicleLocationPresenterToViewProtocol? { get set }
+    var interactor: VehicleLocationPresenterToInteractorProtocol? { get set }
+    var router: VehicleLocationPresenterToRouterProtocol? { get set }
+    var vehicleList: [VehicleModel]? { get set }
+    func viewDidLoad(countryCoordinate: CountryCoordinate)
+    func getVehicles(countryCoordinate: CountryCoordinate)
 }
 
 // MARK: View Output (Presenter -> View)
 protocol VehicleLocationPresenterToViewProtocol {
-func setupUI()
-func onFetchVehiclesSuccess()
-func onFetchVehiclesFailure(error: String)
+    var presenter: VehicleLocationViewToPresenterProtocol? { get set }
+    var mapView: MKMapView { get set }
+    func setupUI()
+    func onFetchVehiclesSuccess()
+    func onFetchVehiclesFailure(error: String)
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)
 protocol VehicleLocationPresenterToInteractorProtocol {
-var presenter: VehicleLocationInteractorToPresenterProtocol? { get set }
-func loadVehicles(countryCoordinate: CountryCoordinate)
+    var presenter: VehicleLocationInteractorToPresenterProtocol? { get set }
+    func loadVehicles(countryCoordinate: CountryCoordinate)
 }
 
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol VehicleLocationInteractorToPresenterProtocol {
-func fetchVehiclesSuccess(vehicles: [VehicleModel])
-func fetchVehiclesFailure(error: Error)
+    func fetchVehiclesSuccess(vehicles: [VehicleModel])
+    func fetchVehiclesFailure(error: Error)
 }
 
 // MARK: Router Input (Presenter -> Router)

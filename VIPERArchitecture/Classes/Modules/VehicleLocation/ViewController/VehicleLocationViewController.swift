@@ -22,7 +22,6 @@ class VehicleLocationViewController: UIViewController {
     var window:UIWindow?
     var mapView = MKMapView()
     var vSpinner : UIView?
-    
     var presenter: VehicleLocationViewToPresenterProtocol?
     var vehicleList = [VehicleModel]()
     
@@ -36,7 +35,7 @@ class VehicleLocationViewController: UIViewController {
     }
     
     func setupUI() {
-        navigationItem.title = "Map"
+        navigationItem.title = ConstantStrings.map
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.view.backgroundColor = UIColor.white
@@ -55,10 +54,7 @@ class VehicleLocationViewController: UIViewController {
         mapView.delegate = self
         
         if let panGesture = panGesture {
-            // make your class the delegate of the pan gesture
             panGesture.delegate = self
-            
-            // add the gesture to the mapView
             mapView.addGestureRecognizer(panGesture)
         }
     }
@@ -78,7 +74,6 @@ class VehicleLocationViewController: UIViewController {
 extension VehicleLocationViewController: VehicleLocationPresenterToViewProtocol {
     
     func onFetchVehiclesSuccess() {
-        print("View receives the response from Presenter and updates itself.")
         DispatchQueue.main.async {
             guard let vehicleList = self.presenter?.vehicleList else {
                 return
@@ -99,16 +94,8 @@ extension VehicleLocationViewController: VehicleLocationPresenterToViewProtocol 
     }
     
     func onFetchVehiclesFailure(error: String) {
-        print("View receives the response from Presenter with error: \(error)")
+        print("Error occured while fetching vehicles. Error: \(error)")
         self.activityIndicator.stopAnimating()
-    }
-    
-    func showHUD() {
-        //HUD.show(.progress, onView: self.view)
-    }
-    
-    func hideHUD() {
-        //HUD.hide()
     }
     
 }
@@ -118,7 +105,7 @@ extension VehicleLocationViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else { return nil }
 
-        let identifier = "Identifier"
+        let identifier = ConstantStrings.annotation
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
 
         if annotationView == nil {
@@ -151,17 +138,17 @@ extension VehicleLocationViewController: UIGestureRecognizerDelegate {
 
 extension VehicleLocationViewController: CLLocationManagerDelegate {
     
-   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-      let location = locations.last! as CLLocation
-      let currentLocation = location.coordinate
-      let coordinateRegion = MKCoordinateRegion(center: currentLocation, latitudinalMeters: 800, longitudinalMeters: 800)
-      mapView.setRegion(coordinateRegion, animated: true)
-      locationManager.stopUpdatingLocation()
-   }
-    
-   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-      print(error.localizedDescription)
-   }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last! as CLLocation
+        let currentLocation = location.coordinate
+        let coordinateRegion = MKCoordinateRegion(center: currentLocation, latitudinalMeters: 800, longitudinalMeters: 800)
+        mapView.setRegion(coordinateRegion, animated: true)
+        locationManager.stopUpdatingLocation()
+    }
+        
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
     
     func currentLocation() {
        locationManager.delegate = self
@@ -175,4 +162,3 @@ extension VehicleLocationViewController: CLLocationManagerDelegate {
     }
     
 }
-

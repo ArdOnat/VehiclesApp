@@ -7,6 +7,7 @@
 //
 
 public struct CountryCoordinate {
+    
     var p2Lat: Float
     var p1Lon: Float
     var p1Lat: Float
@@ -18,4 +19,5 @@ public struct CountryCoordinate {
         self.p1Lat = p1Lat
         self.p2Lon = p2Lon
     }
+    
 }

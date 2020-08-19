@@ -12,4 +12,5 @@ enum VehicleType: String {
     
     case TAXI = "TAXI"
     case OTHER = "OTHER"
+    
 }

@@ -10,11 +10,9 @@ import Foundation
 
 class VehicleListInteractor: VehicleListPresenterToInteractorProtocol {
     
-    // MARK: Properties
     var presenter: VehicleListInteractorToPresenterProtocol?
     
     func loadVehicles(countryCoordinate: CountryCoordinate) {
-        print("Interactor receives the request from Presenter to load quotes from the server.")
         VehicleService.getVehicleList(coordinate: countryCoordinate) { result in
             switch result {
             case .success(let response):
@@ -25,4 +23,5 @@ class VehicleListInteractor: VehicleListPresenterToInteractorProtocol {
             }
         }
     }
+    
 }

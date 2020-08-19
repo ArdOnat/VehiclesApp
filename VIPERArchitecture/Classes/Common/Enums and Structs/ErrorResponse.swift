@@ -7,7 +7,9 @@
 //
 
 public enum ErrorResponse: Error {
+    
     case badURL
     case httpRequestError
     case httpResponseError
+    
 }

@@ -10,4 +10,5 @@ enum DeviceState: String {
     
     case INACTIVE = "INACTIVE"
     case ACTIVE = "ACTIVE"
+    
 }

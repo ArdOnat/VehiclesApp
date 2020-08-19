@@ -24,12 +24,11 @@ class VehicleListViewController: UITableViewController {
     }
     
     func setupUI() {
-        navigationItem.title = "Hamburg Vehicle List"
-        
+        navigationItem.title = ConstantStrings.firstTabTitle
     }
     
     private func setupTableView() {
-        tableView.register(UINib(nibName: "TableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: ConstantStrings.tableViewCellNibName, bundle: Bundle.main), forCellReuseIdentifier: ConstantStrings.vehicleListReusableCellIdentifier)
     }
     
     private func setupDelegation() {
@@ -40,6 +39,7 @@ class VehicleListViewController: UITableViewController {
     private func configure() {
         presenter?.viewDidLoad()
     }
+    
 }
 
 extension VehicleListViewController {
@@ -49,7 +49,7 @@ extension VehicleListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
+        let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: ConstantStrings.vehicleListReusableCellIdentifier) as! TableViewCell
         
         if vehicleList[indexPath.row].state == DeviceState.INACTIVE.rawValue {
             cell.configureInactive(deviceInformation: vehicleList[indexPath.row])
@@ -76,7 +76,6 @@ extension VehicleListViewController {
 extension VehicleListViewController: VehicleListPresenterToViewProtocol {
     
     func onFetchVehiclesSuccess() {
-        print("View receives the response from Presenter and updates itself.")
         DispatchQueue.main.async {
             guard let vehicleList = self.presenter?.vehicleList else {
                 return
@@ -89,15 +88,7 @@ extension VehicleListViewController: VehicleListPresenterToViewProtocol {
     }
     
     func onFetchVehiclesFailure(error: String) {
-        print("View receives the response from Presenter with error: \(error)")
-    }
-    
-    func showHUD() {
-        //HUD.show(.progress, onView: self.view)
-    }
-    
-    func hideHUD() {
-        //HUD.hide()
+        print("Error occured while fetching vehicles. Error: \(error)")
     }
     
 }
