@@ -12,7 +12,6 @@ import MapKit
 class VehicleLocationViewController: UIViewController {
     
     let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
-    var panGesture: UIPanGestureRecognizer?
     fileprivate let locationManager: CLLocationManager = {
         let manager = CLLocationManager()
         manager.requestWhenInUseAuthorization()
@@ -22,6 +21,7 @@ class VehicleLocationViewController: UIViewController {
     var window:UIWindow?
     var mapView = MKMapView()
     var vSpinner : UIView?
+    var panGesture: UIPanGestureRecognizer?
     var presenter: VehicleLocationViewToPresenterProtocol?
     var vehicleList = [VehicleModel]()
     
@@ -48,9 +48,13 @@ class VehicleLocationViewController: UIViewController {
         mapView.addSubview(activityIndicator)
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
+        
+        mapView.showsUserLocation = true
     }
     
     private func setupDelegation() {
+        self.locationManager.delegate = self
+        
         mapView.delegate = self
         
         if let panGesture = panGesture {
