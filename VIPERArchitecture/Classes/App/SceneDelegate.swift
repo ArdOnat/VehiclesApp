@@ -19,16 +19,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let tabBarController = UITabBarController()
+        let vehicleListModuleBuilder = VehicleListModuleBuilder()
+        let vehicleLocationModuleBuilder = VehicleLocationModuleBuilder()
         
-        let vc1 = VehicleListModuleBuilder.createModule()
-        let vc2 = VehicleLocationModuleBuilder.createModule()
+        let vc1 = vehicleListModuleBuilder.createModule()
+        let vc2 = vehicleLocationModuleBuilder.createModule()
 
-        vc1.tabBarItem = UITabBarItem(title: "Hamburg Vehicle List", image: UIImage(named: "TAXI"), tag: 1)
-        vc2.tabBarItem = UITabBarItem(title: "Map", image: UIImage(named: "mAP"), tag: 2)
+        vc1.tabBarItem = UITabBarItem(title: ConstantStrings.firstTabTitle, image: UIImage(named: ConstantStrings.taxi), tag: 1)
+        vc2.tabBarItem = UITabBarItem(title: ConstantStrings.map, image: UIImage(named: ConstantStrings.map), tag: 2)
 
         tabBarController.viewControllers = [vc1, vc2]
         tabBarController.setViewControllers(tabBarController.viewControllers, animated: true)
-        
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
@@ -67,3 +68,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+final class WeakRef<T: AnyObject> {
+    weak var object: T?
+    
+    init (_ object: T) {
+        self.object = object
+    }
+}

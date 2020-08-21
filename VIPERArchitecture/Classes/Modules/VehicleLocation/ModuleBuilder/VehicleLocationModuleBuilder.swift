@@ -8,21 +8,50 @@
 
 import UIKit
 
-class VehicleLocationModuleBuilder {
+class VehicleLocationModuleBuilder: VehicleLocationModuleBuilderProtocol {
     
-    static func createModule() -> UINavigationController {
+    func createModule() -> UINavigationController {
         let viewController = VehicleLocationViewController()
+        let interactor = VehicleLocationInteractor()
+        let router = VehicleLocationRouter()
+        
         let navigationController = UINavigationController(rootViewController: viewController)
         
-        let presenter: VehicleLocationViewToPresenterProtocol & VehicleLocationInteractorToPresenterProtocol = VehicleLocationPresenter()
+        let presenter = VehicleLocationPresenter(view: WeakRef(viewController), interactor: interactor, router :router)
+        
+        interactor.presenter = WeakRef(presenter)
         
         viewController.presenter = presenter
-        viewController.presenter?.router = VehicleLocationRouter()
-        viewController.presenter?.view = viewController
-        viewController.presenter?.interactor = VehicleLocationInteractor()
-        viewController.presenter?.interactor?.presenter = presenter
         
         return navigationController
+    }
+    
+}
+
+extension WeakRef: VehicleLocationInteractorToPresenterProtocol where T: VehicleLocationInteractorToPresenterProtocol {
+    
+    func fetchVehiclesSuccess(vehicles: [VehicleModel]) {
+        object?.fetchVehiclesSuccess(vehicles: vehicles)
+    }
+    
+    func fetchVehiclesFailure(error: Error) {
+        object?.fetchVehiclesFailure(error: error)
+    }
+    
+}
+
+extension WeakRef: VehicleLocationPresenterToViewProtocol where T: VehicleLocationPresenterToViewProtocol {
+    
+    func setupUI() {
+        object?.setupUI()
+    }
+    
+    func onFetchVehiclesFailure(error: String) {
+        object?.onFetchVehiclesFailure(error: error)
+    }
+    
+    func onFetchVehiclesSuccess(vehicles: [VehicleModel]) {
+        object?.onFetchVehiclesSuccess(vehicles: vehicles)
     }
     
 }

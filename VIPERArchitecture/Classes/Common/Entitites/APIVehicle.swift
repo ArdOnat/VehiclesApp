@@ -9,18 +9,24 @@
 import Foundation
 
 struct GetVehicleListResult: Decodable {
+    
     let poiList: [VehicleInformation]
+    
 }
 
 struct VehicleInformation: Decodable {
+    
     let id: Int
     let coordinate: Coordinate
     let state: String
     let type: String
     let heading: Float
+    
 }
 
 struct Coordinate: Decodable {
+    
     let latitude: Float
     let longitude: Float
+    
 }

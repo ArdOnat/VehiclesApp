@@ -38,6 +38,7 @@
 		4C33848124EADD7F00389D2D /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C33846624EADD7E00389D2D /* VehicleService.swift */; };
 		4C79432224EDA60400E37804 /* ConstantString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79432124EDA60400E37804 /* ConstantString.swift */; };
 		4C79432424EDA89400E37804 /* ConstantCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79432324EDA89400E37804 /* ConstantCoordinates.swift */; };
+		4CD59C1724F04955003F8165 /* MockVehicleListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD59C1624F04955003F8165 /* MockVehicleListModuleBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		4C33846624EADD7E00389D2D /* VehicleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleService.swift; sourceTree = "<group>"; };
 		4C79432124EDA60400E37804 /* ConstantString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantString.swift; sourceTree = "<group>"; };
 		4C79432324EDA89400E37804 /* ConstantCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantCoordinates.swift; sourceTree = "<group>"; };
+		4CD59C1624F04955003F8165 /* MockVehicleListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVehicleListModuleBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			children = (
 				4C33841B24EADCE800389D2D /* VIPERArchitectureTests.swift */,
 				4C33841D24EADCE800389D2D /* Info.plist */,
+				4CD59C1624F04955003F8165 /* MockVehicleListModuleBuilder.swift */,
 			);
 			path = VIPERArchitectureTests;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD59C1724F04955003F8165 /* MockVehicleListModuleBuilder.swift in Sources */,
 				4C33841C24EADCE800389D2D /* VIPERArchitectureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

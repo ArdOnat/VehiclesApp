@@ -10,25 +10,43 @@ import XCTest
 @testable import VIPERArchitecture
 
 class VIPERArchitectureTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    private weak var SUT: MockVehicleListModuleBuilder?
+    private weak var weakVC: VehicleListViewController?
+    
+    override func tearDown() {
+        super.tearDown()
+        
+        // MARK: Check retain cycle
+        assertNoMemoryLeaks()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    private func assertNoMemoryLeaks() {
+        XCTAssertNil(weakVC)
+        XCTAssertNil(SUT)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testCreateModuleRetainCycle() {
+        let vc = makeViewController()
+        let sut = makeSUT(withViewController: vc)
+        
+        sut.createModule()
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func makeSUT(withViewController vc: VehicleListViewController) -> MockVehicleListModuleBuilder {
+        let interactor = VehicleListInteractor()
+        let router = VehicleListRouter()
+        let sut = MockVehicleListModuleBuilder(vc: vc, interactor: interactor, router: router)
+        self.SUT = sut
+        
+        return sut
+    }
+    
+    func makeViewController() -> VehicleListViewController {
+        let vc = VehicleListViewController()
+        vc.loadViewIfNeeded()
+        self.weakVC = vc
+        
+        return vc
     }
 
 }

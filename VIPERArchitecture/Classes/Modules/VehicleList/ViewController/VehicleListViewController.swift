@@ -45,7 +45,7 @@ class VehicleListViewController: UITableViewController {
 extension VehicleListViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.vehicleList?.count ?? 0
+        return vehicleList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,14 +75,10 @@ extension VehicleListViewController {
 
 extension VehicleListViewController: VehicleListPresenterToViewProtocol {
     
-    func onFetchVehiclesSuccess() {
+    func onFetchVehiclesSuccess(vehicles: [VehicleModel]) {
+        self.vehicleList = vehicles
+        
         DispatchQueue.main.async {
-            guard let vehicleList = self.presenter?.vehicleList else {
-                return
-            }
-            
-            self.vehicleList = vehicleList
-            
             self.tableView.reloadData()
         }
     }

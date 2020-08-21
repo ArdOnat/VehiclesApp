@@ -6,14 +6,17 @@
 //  Copyright © 2020 Arda Onat. All rights reserved.
 //
 
-import Foundation
-
 class VehicleLocationPresenter {
 
     var view: VehicleLocationPresenterToViewProtocol?
     var interactor: VehicleLocationPresenterToInteractorProtocol?
     var router: VehicleLocationPresenterToRouterProtocol?
-    var vehicleList: [VehicleModel]?
+    
+    init( view: VehicleLocationPresenterToViewProtocol, interactor: VehicleLocationPresenterToInteractorProtocol, router: VehicleLocationPresenterToRouterProtocol) {
+        self.view = view
+        self.interactor = interactor
+        self.router = router
+    }
     
     func viewDidLoad(countryCoordinate: CountryCoordinate) {
         getVehicles(countryCoordinate: countryCoordinate)
@@ -32,8 +35,7 @@ extension VehicleLocationPresenter: VehicleLocationViewToPresenterProtocol {
 extension VehicleLocationPresenter: VehicleLocationInteractorToPresenterProtocol {
     
     func fetchVehiclesSuccess(vehicles: [VehicleModel]) {
-        self.vehicleList = vehicles
-        view?.onFetchVehiclesSuccess()
+        view?.onFetchVehiclesSuccess(vehicles: vehicles)
     }
     
     func fetchVehiclesFailure(error: Error) {

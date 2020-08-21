@@ -8,21 +8,49 @@
 
 import UIKit
 
-class VehicleListModuleBuilder {
+class VehicleListModuleBuilder: VehicleListModuleBuilderProtocol {
     
-    static func createModule() -> UINavigationController {
+    func createModule() -> UINavigationController {
         let viewController = VehicleListViewController()
+        let interactor = VehicleListInteractor()
+        let router = VehicleListRouter()
+        
         let navigationController = UINavigationController(rootViewController: viewController)
         
-        let presenter: VehicleListViewToPresenterProtocol & VehicleListInteractorToPresenterProtocol = VehicleListPresenter()
+        let presenter = VehicleListPresenter(view: WeakRef(viewController), interactor: interactor, router: router)
+        
+        interactor.presenter = WeakRef(presenter)
         
         viewController.presenter = presenter
-        viewController.presenter?.router = VehicleListRouter()
-        viewController.presenter?.view = viewController
-        viewController.presenter?.interactor = VehicleListInteractor()
-        viewController.presenter?.interactor?.presenter = presenter
         
         return navigationController
     }
     
+}
+
+extension WeakRef: VehicleListInteractorToPresenterProtocol where T: VehicleListInteractorToPresenterProtocol {
+    
+    func fetchVehiclesSuccess(vehicles: [VehicleModel]) {
+        object?.fetchVehiclesSuccess(vehicles: vehicles)
+    }
+    
+    func fetchVehiclesFailure(error: Error) {
+        object?.fetchVehiclesFailure(error: error)
+    }
+    
+}
+
+extension WeakRef: VehicleListPresenterToViewProtocol where T: VehicleListPresenterToViewProtocol {
+    
+    func setupUI() {
+        object?.setupUI()
+    }
+    
+    func onFetchVehiclesSuccess(vehicles: [VehicleModel]) {
+        object?.onFetchVehiclesSuccess(vehicles: vehicles)
+    }
+    
+    func onFetchVehiclesFailure(error: String) {
+        object?.onFetchVehiclesFailure(error: error)
+    }
 }

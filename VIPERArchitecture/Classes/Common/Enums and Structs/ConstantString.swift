@@ -6,8 +6,6 @@
 //  Copyright © 2020 Arda Onat. All rights reserved.
 //
 
-import Foundation
-
 struct ConstantStrings {
     
     static let map = "Map"
@@ -15,5 +13,6 @@ struct ConstantStrings {
     static let vehicleListReusableCellIdentifier = "Cell"
     static let tableViewCellNibName = "TableViewCell"
     static let annotation = "Annotation"
+    static let taxi = "TAXI"
     
 }

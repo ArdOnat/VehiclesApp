@@ -22,6 +22,7 @@ class VehicleLocationViewController: UIViewController {
     var mapView = MKMapView()
     var vSpinner : UIView?
     var panGesture: UIPanGestureRecognizer?
+    
     var presenter: VehicleLocationViewToPresenterProtocol?
     var vehicleList = [VehicleModel]()
     
@@ -67,23 +68,20 @@ class VehicleLocationViewController: UIViewController {
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(VehicleLocationViewController.didDragMap(_:)))
     }
     
-    private func configure() {
+    public func configure() {
         let countryCoordinate = CountryCoordinate(p2Lat: Float(mapView.northEastCoordinate.latitude), p1Lon:Float(mapView.southWestCoordinate.longitude), p1Lat: Float(mapView.southWestCoordinate.latitude), p2Lon: Float(mapView.northEastCoordinate.longitude))
         activityIndicator.startAnimating()
-        presenter?.viewDidLoad(countryCoordinate: countryCoordinate)
+        presenter?.getVehicles(countryCoordinate: countryCoordinate)
     }
     
 }
 
 extension VehicleLocationViewController: VehicleLocationPresenterToViewProtocol {
     
-    func onFetchVehiclesSuccess() {
+    func onFetchVehiclesSuccess(vehicles: [VehicleModel]) {
         DispatchQueue.main.async {
-            guard let vehicleList = self.presenter?.vehicleList else {
-                return
-            }
             
-            self.vehicleList = vehicleList
+            self.vehicleList = vehicles
             
             for point in self.vehicleList {
                 let annotation = MKPointAnnotation()

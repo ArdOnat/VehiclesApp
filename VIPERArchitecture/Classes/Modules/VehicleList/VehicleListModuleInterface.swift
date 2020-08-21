@@ -8,38 +8,35 @@
 
 import UIKit
 
-// MARK: View Input (View -> Presenter) -> Presenter conforms
+// MARK: View Input (View -> Presenter) -> Strong Relation
 protocol VehicleListViewToPresenterProtocol {
-    var view: VehicleListPresenterToViewProtocol? { get set }
-    var interactor: VehicleListPresenterToInteractorProtocol? { get set }
-    var router: VehicleListPresenterToRouterProtocol? { get set }
-    var vehicleList: [VehicleModel]? { get set }
     func viewDidLoad()
     func getVehicles(countryCoordinate: CountryCoordinate)
 }
 
-// MARK: View Output (Presenter -> View) -> View conforms
+// MARK: View Output (Presenter -> View) -> Weak Relation
 protocol VehicleListPresenterToViewProtocol {
-    var presenter: VehicleListViewToPresenterProtocol? { get set }
-    var vehicleList: [VehicleModel] { get set }
     func setupUI()
-    func onFetchVehiclesSuccess()
+    func onFetchVehiclesSuccess(vehicles: [VehicleModel])
     func onFetchVehiclesFailure(error: String)
 }
 
-// MARK: Interactor Input (Presenter -> Interactor) -> Interactor conforms
+// MARK: Interactor Input (Presenter -> Interactor) -> Strong Relation
 protocol VehicleListPresenterToInteractorProtocol {
-    var presenter: VehicleListInteractorToPresenterProtocol? { get set }
     func loadVehicles(countryCoordinate: CountryCoordinate)
 }
 
-// MARK: Interactor Output (Interactor -> Presenter) -> Presenter conforms
-protocol VehicleListInteractorToPresenterProtocol {
+// MARK: Interactor Output (Interactor -> Presenter) -> Weak Relation
+protocol VehicleListInteractorToPresenterProtocol: class {
     func fetchVehiclesSuccess(vehicles: [VehicleModel])
     func fetchVehiclesFailure(error: Error)
 }
 
-// MARK: Router Input (Presenter -> Router) -> Router conforms
+// MARK: Router Input (Presenter -> Router) -> Strong Relation
 protocol VehicleListPresenterToRouterProtocol {
     
+}
+
+protocol VehicleListModuleBuilderProtocol {
+    func createModule() -> UINavigationController
 }

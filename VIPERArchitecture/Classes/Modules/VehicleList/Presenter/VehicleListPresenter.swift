@@ -11,7 +11,12 @@ class VehicleListPresenter {
     var view: VehicleListPresenterToViewProtocol?
     var interactor: VehicleListPresenterToInteractorProtocol?
     var router: VehicleListPresenterToRouterProtocol?
-    var vehicleList: [VehicleModel]?
+    
+    init( view: VehicleListPresenterToViewProtocol, interactor: VehicleListPresenterToInteractorProtocol, router: VehicleListPresenterToRouterProtocol) {
+        self.view = view
+        self.interactor = interactor
+        self.router = router
+    }
     
     func viewDidLoad() {
         let countryCoordinate = ConstantCoordinates.Hamburg
@@ -31,12 +36,11 @@ extension VehicleListPresenter: VehicleListViewToPresenterProtocol {
 extension VehicleListPresenter: VehicleListInteractorToPresenterProtocol {
     
     func fetchVehiclesSuccess(vehicles: [VehicleModel]) {
-        self.vehicleList = vehicles
-        self.view?.onFetchVehiclesSuccess()
+        self.view?.onFetchVehiclesSuccess(vehicles: vehicles)
     }
     
     func fetchVehiclesFailure(error: Error) {
-    
+        self.view?.onFetchVehiclesFailure(error: error.localizedDescription)
     }
     
 }
