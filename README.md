@@ -1,4 +1,4 @@
-# VIPER Architecture
+# Vehicles App
 
 An iOS application that uses an API to show specific vehicles' location on the map.
 
